@@ -24,6 +24,8 @@ repositories {
 
 dependencies { //프로젝트 개발에 필요한 의존성들을 선언하는 곳
     compile('org.springframework.boot:spring-boot-starter-web') //compile 메소드 안에 '컨트롤+스페이스'하면 해당 라이브러리들의 목록을 볼 수 있음
+    annotationProcessor("org.projectlombok:lombok")
+    compileOnly('org.projectlombok:lombok')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
