@@ -1,5 +1,6 @@
 package com.cnameproject.springboot.domain.posts;
 
+import com.cnameproject.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,7 @@ import javax.persistence.*;
 @Getter //클래스 내 모든 필드의 getter메소드 자동생성
 @NoArgsConstructor //기본 생성자 자동추가, public Posts(){}와 같은 역할
 @Entity // 테이블과 링크될 클래스임을 나타냄,
-public class Posts { //Posts 클래스는 실제 DB의 테이블과 연결되는 테이블로 흔히 Entity 클래스라고 함.
+public class Posts extends BaseTimeEntity { //Posts 클래스는 실제 DB의 테이블과 연결되는 테이블로 흔히 Entity 클래스라고 함.
 
     //Entity클래스에는 절대 Setter메소드를 생성하지 않음 : 해당 클래스의 인스턴스값들이 언제 어디서 변해야하는지 코드상으로 명확하게 구분할 수 X.
     //대신 해당 필드의 값 변경이 필요하면 명확히 그 목적과 의도롤 나타낼 수 있는 메소드를 추가해야만 함.
@@ -36,5 +37,10 @@ public class Posts { //Posts 클래스는 실제 DB의 테이블과 연결되는
         this.title = title;
         this.content = content;
         this.author = author;
+    }
+
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
     }
 }
