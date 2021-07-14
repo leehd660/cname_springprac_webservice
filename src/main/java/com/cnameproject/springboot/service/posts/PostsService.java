@@ -2,13 +2,16 @@ package com.cnameproject.springboot.service.posts;
 
 import com.cnameproject.springboot.domain.posts.Posts;
 import com.cnameproject.springboot.domain.posts.PostsRepository;
+import com.cnameproject.springboot.web.dto.PostsListResponseDto;
 import com.cnameproject.springboot.web.dto.PostsResponseDto;
 import com.cnameproject.springboot.web.dto.PostsSaveRequestDto;
 import com.cnameproject.springboot.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
+import java.util.List;
+import java.util.stream.Collectors;
 
 // 스프링에서 Bean을 주입받는 방식 : @Autowired , setter, 생성자 > 이중 생성자로 주입받는 것을 가장 권장
 // final이 선언된 모든 필드를 인자값으로 하는 생성자를 룸복의 @RequiredArgsConstructor가 대신 생성해준 것.
@@ -40,4 +43,16 @@ public class PostsService {
                 .orElseThrow(()->new IllegalArgumentException("해당 게시글이 없습니다. id = "+id));
         return new PostsResponseDto(entity);
     }
+
+    @Transactional(readOnly = true)
+    //트랜잭션 범위는 유지하되, 조회 기능만 남겨두어 조회 속도가 개선되기 때문에
+    //등록, 수정, 삭제 기능이 전혀 업는 서비스 메소드에서 사용하는 것을 추천함.
+    public List<PostsListResponseDto> findAllDesc() {
+        return postsRepository.findAllDesc().stream()
+                .map(PostsListResponseDto::new)
+                .collect(Collectors.toList());
+        //.map(PostsListResponseDto::new)의 식은 실제로 .map(posts -> new PostsListResponseDto(posts))와 같음
+        //postsRepository결과로 넘어온 Posts의 Stream을 map을 통해 PostsListResponseDto 변환 -> List로 반환하는 메소드
+    }
+
 }

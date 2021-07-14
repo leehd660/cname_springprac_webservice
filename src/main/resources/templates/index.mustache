@@ -30,6 +30,30 @@
 <!--                <a>태그를 이용해 글 등록 페이지로 이동하는 글 등록 버튼 생성, 이동한 페이지의 주소는 href인 '/posts/save'임-->
             </div>
         </div>
+        <br>
+<!--        목록 출력 영역-->
+        <table class="table tavle-horizontal table-bordered">
+            <thread class="thead-strong">
+            <tr>
+                <th>게시글번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>최종수정일</th>
+            </tr>
+            </thread>
+            <tbody id="tbody">
+            {{#posts}}
+<!--            posts라는 List를 순회함, JAVA의 for문과 동일하게 생각하면 됨-->
+                <tr>
+                    <td>{{id}}</td>
+<!--                    중복되는 중괄호 안의 변수명 들 : List에서 뽑아낸 객체들의 필드를 사용함-->
+                    <td>{{title}}</td>
+                    <td>{{author}}</td>
+                    <td>{{modifiedDate}}</td>
+                </tr>
+            {{/posts}}
+            </tbody>
+        </table>
     </div>
 
 {{>layout/footer}}
