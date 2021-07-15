@@ -47,7 +47,8 @@
                 <tr>
                     <td>{{id}}</td>
 <!--                    중복되는 중괄호 안의 변수명 들 : List에서 뽑아낸 객체들의 필드를 사용함-->
-                    <td>{{title}}</td>
+                    <td><a href="/posts/update/{{id}}">{{title}}</a></td>
+<!--                    타이틀title에 a tag를 추가함 > 타이틀을 클릭하면 해달 게시글의 수정화면으로 이동함.-->
                     <td>{{author}}</td>
                     <td>{{modifiedDate}}</td>
                 </tr>
