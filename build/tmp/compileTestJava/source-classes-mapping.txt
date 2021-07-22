@@ -1,0 +1,10 @@
+com/cnameproject/springboot/IndexControllerTest.java
+ com.cnameproject.springboot.IndexControllerTest
+com/cnameproject/springboot/dto/HelloResponseDtoTest.java
+ com.cnameproject.springboot.dto.HelloResponseDtoTest
+com/cnameproject/springboot/domain/posts/PostsRepositoryTest.java
+ com.cnameproject.springboot.domain.posts.PostsRepositoryTest
+com/cnameproject/springboot/web/PostsApiControllerTest.java
+ com.cnameproject.springboot.web.PostsApiControllerTest
+com/cnameproject/springboot/HelloControllerTest.java
+ com.cnameproject.springboot.HelloControllerTest
