@@ -36,6 +36,10 @@ dependencies { //프로젝트 개발에 필요한 의존성들을 선언하는 �
     testCompile("org.springframework.security:spring-security-test")//스프링 시큐리티를 테스트에서 실행할 수 있도록 함.
 }
 
+bootJar{
+    mainClassName = 'com.cnameproject.springboot.Application'
+}
+
 group 'com.cnameproject'
 version '1.0-SNAPSHOT'
 sourceCompatibility = 11
