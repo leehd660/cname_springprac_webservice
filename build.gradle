@@ -34,6 +34,7 @@ dependencies { //프로젝트 개발에 필요한 의존성들을 선언하는 �
     //spring-security-oauth2-client와 spring-security-oauth2-jose를 기본으로 관리해줌.
     compile('org.springframework.session:spring-session-jdbc')//jdbc를 사용하게 만드는 의존성
     testCompile("org.springframework.security:spring-security-test")//스프링 시큐리티를 테스트에서 실행할 수 있도록 함.
+    compile("org.mariadb.jdbc:mariadb-java-client") // mariadb 드라이버를 등록
 }
 
 bootJar{
