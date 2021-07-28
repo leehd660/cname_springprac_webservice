@@ -2,8 +2,8 @@ com/cnameproject/springboot/config/auth/WebConfig.java
  com.cnameproject.springboot.config.auth.WebConfig
 com/cnameproject/springboot/web/HelloController.java
  com.cnameproject.springboot.web.HelloController
-com/cnameproject/springboot/service/posts/PostsService.java
- com.cnameproject.springboot.service.posts.PostsService
+com/cnameproject/springboot/config/auth/CustomOAuth2UserService.java
+ com.cnameproject.springboot.config.auth.CustomOAuth2UserService
 com/cnameproject/springboot/config/auth/LoginUser.java
  com.cnameproject.springboot.config.auth.LoginUser
 com/cnameproject/springboot/web/dto/PostsListResponseDto.java
@@ -21,33 +21,33 @@ com/cnameproject/springboot/web/dto/PostsUpdateRequestDto.java
  com.cnameproject.springboot.web.dto.PostsUpdateRequestDto$PostsUpdateRequestDtoBuilder
 com/cnameproject/springboot/domain/BaseTimeEntity.java
  com.cnameproject.springboot.domain.BaseTimeEntity
+com/cnameproject/springboot/config/JpaConfig.java
+ com.cnameproject.springboot.config.JpaConfig
 com/cnameproject/springboot/web/dto/PostsSaveRequestDto.java
  com.cnameproject.springboot.web.dto.PostsSaveRequestDto
  com.cnameproject.springboot.web.dto.PostsSaveRequestDto$PostsSaveRequestDtoBuilder
-com/cnameproject/springboot/config/auth/dto/SessionUser.java
- com.cnameproject.springboot.config.auth.dto.SessionUser
 com/cnameproject/springboot/config/auth/LoginUserArgumentResolver.java
  com.cnameproject.springboot.config.auth.LoginUserArgumentResolver
+com/cnameproject/springboot/config/auth/dto/SessionUser.java
+ com.cnameproject.springboot.config.auth.dto.SessionUser
 com/cnameproject/springboot/web/IndexController.java
  com.cnameproject.springboot.web.IndexController
-com/cnameproject/springboot/config/auth/dto/OAuthAttributes.java
- com.cnameproject.springboot.config.auth.dto.OAuthAttributes
- com.cnameproject.springboot.config.auth.dto.OAuthAttributes$OAuthAttributesBuilder
 com/cnameproject/springboot/domain/user/User.java
  com.cnameproject.springboot.domain.user.User
  com.cnameproject.springboot.domain.user.User$UserBuilder
+com/cnameproject/springboot/Application.java
+ com.cnameproject.springboot.Application
 com/cnameproject/springboot/domain/user/UserRepository.java
  com.cnameproject.springboot.domain.user.UserRepository
-com/cnameproject/springboot/web/dto/PostsResponseDto.java
- com.cnameproject.springboot.web.dto.PostsResponseDto
+com/cnameproject/springboot/config/auth/dto/OAuthAttributes.java
+ com.cnameproject.springboot.config.auth.dto.OAuthAttributes
+ com.cnameproject.springboot.config.auth.dto.OAuthAttributes$OAuthAttributesBuilder
 com/cnameproject/springboot/web/dto/HelloResponseDto.java
  com.cnameproject.springboot.web.dto.HelloResponseDto
 com/cnameproject/springboot/domain/posts/Posts.java
  com.cnameproject.springboot.domain.posts.Posts
  com.cnameproject.springboot.domain.posts.Posts$PostsBuilder
-com/cnameproject/springboot/config/auth/CustomOAuth2UserService.java
- com.cnameproject.springboot.config.auth.CustomOAuth2UserService
-com/cnameproject/springboot/config/JpaConfig.java
- com.cnameproject.springboot.config.JpaConfig
-com/cnameproject/springboot/Application.java
- com.cnameproject.springboot.Application
+com/cnameproject/springboot/web/dto/PostsResponseDto.java
+ com.cnameproject.springboot.web.dto.PostsResponseDto
+com/cnameproject/springboot/service/posts/PostsService.java
+ com.cnameproject.springboot.service.posts.PostsService
