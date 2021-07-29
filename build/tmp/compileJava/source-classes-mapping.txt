@@ -26,17 +26,17 @@ com/cnameproject/springboot/config/JpaConfig.java
 com/cnameproject/springboot/web/dto/PostsSaveRequestDto.java
  com.cnameproject.springboot.web.dto.PostsSaveRequestDto
  com.cnameproject.springboot.web.dto.PostsSaveRequestDto$PostsSaveRequestDtoBuilder
-com/cnameproject/springboot/config/auth/LoginUserArgumentResolver.java
- com.cnameproject.springboot.config.auth.LoginUserArgumentResolver
 com/cnameproject/springboot/config/auth/dto/SessionUser.java
  com.cnameproject.springboot.config.auth.dto.SessionUser
+com/cnameproject/springboot/config/auth/LoginUserArgumentResolver.java
+ com.cnameproject.springboot.config.auth.LoginUserArgumentResolver
 com/cnameproject/springboot/web/IndexController.java
  com.cnameproject.springboot.web.IndexController
+com/cnameproject/springboot/Application.java
+ com.cnameproject.springboot.Application
 com/cnameproject/springboot/domain/user/User.java
  com.cnameproject.springboot.domain.user.User
  com.cnameproject.springboot.domain.user.User$UserBuilder
-com/cnameproject/springboot/Application.java
- com.cnameproject.springboot.Application
 com/cnameproject/springboot/domain/user/UserRepository.java
  com.cnameproject.springboot.domain.user.UserRepository
 com/cnameproject/springboot/config/auth/dto/OAuthAttributes.java
