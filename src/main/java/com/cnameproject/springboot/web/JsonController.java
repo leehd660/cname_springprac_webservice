@@ -6,10 +6,7 @@ import com.cnameproject.springboot.config.auth.dto.SessionUser;
 import com.cnameproject.springboot.service.posts.PostsService;
 import com.cnameproject.springboot.web.dto.UserListDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -35,7 +32,7 @@ public class JsonController {
         return nowUserInfo;
     }
 
-    @GetMapping("/user/login/google")
+    @PostMapping("/user/login/google")
     public void saveUser (@RequestBody UserListDto userdto) {
         postsService.userSave(userdto);
     }
