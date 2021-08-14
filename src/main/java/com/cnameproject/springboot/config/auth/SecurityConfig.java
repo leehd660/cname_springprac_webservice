@@ -1,15 +1,15 @@
-package com.cnameproject.springboot.config.auth;
+//package com.cnameproject.springboot.config.auth;
+//
+//
+//import lombok.RequiredArgsConstructor;
+//import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+//import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-
-import lombok.RequiredArgsConstructor;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-
-@RequiredArgsConstructor
-@EnableWebSecurity //Spring Security 설정들을 활성화시켜 줌
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
-    private final CustomOAuth2UserService customOAuth2UserService;
+//@RequiredArgsConstructor
+//@EnableWebSecurity //Spring Security 설정들을 활성화시켜 줌
+//public class SecurityConfig extends WebSecurityConfigurerAdapter {
+//
+//    private final CustomOAuth2UserService customOAuth2UserService;
 
 //    @Override
 //    protected void configure(HttpSecurity http) throws Exception {
@@ -31,4 +31,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                        //리소스 서버(즉, 소셜 서비스들)에서 사용자 정보롤가져온 상태에서 추가로 진행하고자 하는 기능을 명시할 수 있음.
 //
 //    }
-}
+//}
