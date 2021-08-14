@@ -64,8 +64,8 @@ public class PostsService {
     }
 
     @Transactional
-    public String userSave(UserListDto userListDto) {
-        return userInfoRepository.save(userListDto.toEntity()).getName();
+    public Long userSave(UserListDto userListDto) {
+        return userInfoRepository.save(userListDto.toEntity()).getId();
     }
 
 }

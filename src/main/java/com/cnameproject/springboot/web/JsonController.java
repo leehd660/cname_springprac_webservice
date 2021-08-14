@@ -31,9 +31,7 @@ public class JsonController {
 //    }
 
     @PostMapping("/user/login/google")
-    public void saveUser (@RequestBody UserListDto userdto) {
-        String str = "";
-
-        postsService.userSave(userdto);
+    public Long saveUser (@RequestBody UserListDto userdto) {
+        return postsService.userSave(userdto);
     }
 }
