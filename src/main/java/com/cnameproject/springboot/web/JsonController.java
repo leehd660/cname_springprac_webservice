@@ -6,6 +6,9 @@ import com.google.gson.Gson;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @RestController
 @RequiredArgsConstructor
 public class JsonController {
@@ -32,6 +35,9 @@ public class JsonController {
 
     @PostMapping("/user/login/google")
     public String saveUser (@RequestBody UserListDto userdto) {
-        return postsService.userSave(userdto);
+        Map<String, Object> map = new HashMap();
+        map.put("id", postsService.userSave(userdto));
+        String id_list = new Gson().toJson(map);
+        return id_list;
     }
 }
