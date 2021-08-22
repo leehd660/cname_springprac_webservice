@@ -42,7 +42,7 @@ public class JsonController {
         return id_list;
     }
 
-    @PostMapping("/user/login/addinfo/{id}")
+    @PutMapping("/user/login/addinfo/{id}")
     public String saveAddInfo (@PathVariable Long id, @RequestBody UserAddInfoDto userAddInfoDto){
         boolean answer = false;
         String strId = Long.toString(id);
