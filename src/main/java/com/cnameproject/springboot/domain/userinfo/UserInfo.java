@@ -53,5 +53,11 @@ public class UserInfo {
         this.longitude = longitude;
     }
 
+    public void addUpdate(String name, String phone_num,String bluetooth_data,String birth_data){
+        this.name = name;
+        this.phone_num = phone_num;
+        this.bluetooth_data = bluetooth_data;
+        this.birth_data = birth_data;
+    }
 
 }

@@ -1,6 +1,7 @@
 package com.cnameproject.springboot.web;
 
 import com.cnameproject.springboot.service.posts.PostsService;
+import com.cnameproject.springboot.web.dto.UserAddInfoDto;
 import com.cnameproject.springboot.web.dto.UserListDto;
 import com.google.gson.Gson;
 import lombok.RequiredArgsConstructor;
@@ -39,5 +40,20 @@ public class JsonController {
         map.put("id", postsService.userSave(userdto));
         String id_list = new Gson().toJson(map);
         return id_list;
+    }
+
+    @PostMapping("/user/login/addinfo/{id}")
+    public String saveAddInfo (@PathVariable Long id, @RequestBody UserAddInfoDto userAddInfoDto){
+        boolean answer = false;
+        String strId = Long.toString(id);
+        String str = postsService.userAddUpdate(id,userAddInfoDto);
+        if (str.equals(strId)){
+            answer = true;
+        }
+        Map<String, Object> map = new HashMap();
+        map.put("result", answer);
+        String result_list = new Gson().toJson(map);
+
+        return result_list;
     }
 }

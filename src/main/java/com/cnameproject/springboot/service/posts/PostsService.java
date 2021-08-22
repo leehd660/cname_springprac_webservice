@@ -2,6 +2,7 @@ package com.cnameproject.springboot.service.posts;
 
 import com.cnameproject.springboot.domain.posts.Posts;
 import com.cnameproject.springboot.domain.posts.PostsRepository;
+import com.cnameproject.springboot.domain.userinfo.UserInfo;
 import com.cnameproject.springboot.domain.userinfo.UserInfoRepository;
 import com.cnameproject.springboot.web.dto.*;
 import lombok.RequiredArgsConstructor;
@@ -67,6 +68,15 @@ public class PostsService {
     public String userSave(UserListDto userListDto) {
         long num = userInfoRepository.save(userListDto.toEntity()).getId();
         return Long.toString(num);
+    }
+
+    @Transactional
+    public String userAddUpdate(Long id, UserAddInfoDto userAddInfoDto){
+        UserInfo userInfo = userInfoRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("해당 유저가 없습니다. id = " + id));
+
+        userInfo.addUpdate(userAddInfoDto.getName(),userAddInfoDto.getPhone_num(),userAddInfoDto.getBluetooth_data(),userAddInfoDto.getBirth_data());
+        return Long.toString(id);
     }
 
 }
