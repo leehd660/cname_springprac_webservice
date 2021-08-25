@@ -66,8 +66,12 @@ public class PostsService {
 
     @Transactional
     public String userSave(UserListDto userListDto) {
-        long num = userInfoRepository.save(userListDto.toEntity()).getId();
-        return Long.toString(num);
+        String findEmail = userListDto.getEmail();
+        Long findId = userInfoRepository.findIdByEmail(findEmail);
+        if (findId == null){
+            findId = userInfoRepository.save(userListDto.toEntity()).getId();
+        }
+        return Long.toString(findId);
     }
 
     @Transactional
