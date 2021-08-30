@@ -13,17 +13,15 @@ com/cnameproject/springboot/web/dto/PostsUpdateRequestDto.java
 com/cnameproject/springboot/web/dto/PostsSaveRequestDto.java
  com.cnameproject.springboot.web.dto.PostsSaveRequestDto
  com.cnameproject.springboot.web.dto.PostsSaveRequestDto$PostsSaveRequestDtoBuilder
-com/cnameproject/springboot/domain/userinfo/User_info.java
- com.cnameproject.springboot.domain.userinfo.User_info
- com.cnameproject.springboot.domain.userinfo.User_info$User_infoBuilder
+com/cnameproject/springboot/Application.java
+ com.cnameproject.springboot.Application
 com/cnameproject/springboot/web/dto/PostsResponseDto.java
  com.cnameproject.springboot.web.dto.PostsResponseDto
 com/cnameproject/springboot/domain/user/User.java
  com.cnameproject.springboot.domain.user.User
  com.cnameproject.springboot.domain.user.User$UserBuilder
-com/cnameproject/springboot/web/dto/UserAddInfoDto.java
- com.cnameproject.springboot.web.dto.UserAddInfoDto
- com.cnameproject.springboot.web.dto.UserAddInfoDto$UserAddInfoDtoBuilder
+com/cnameproject/springboot/domain/user/UserRepository.java
+ com.cnameproject.springboot.domain.user.UserRepository
 com/cnameproject/springboot/domain/posts/Posts.java
  com.cnameproject.springboot.domain.posts.Posts
  com.cnameproject.springboot.domain.posts.Posts$PostsBuilder
@@ -44,19 +42,21 @@ com/cnameproject/springboot/config/JpaConfig.java
  com.cnameproject.springboot.config.JpaConfig
 com/cnameproject/springboot/config/auth/dto/SessionUser.java
  com.cnameproject.springboot.config.auth.dto.SessionUser
-com/cnameproject/springboot/Application.java
- com.cnameproject.springboot.Application
-com/cnameproject/springboot/domain/user/UserRepository.java
- com.cnameproject.springboot.domain.user.UserRepository
-com/cnameproject/springboot/web/dto/UserListDto.java
- com.cnameproject.springboot.web.dto.UserListDto
- com.cnameproject.springboot.web.dto.UserListDto$UserListDtoBuilder
+com/cnameproject/springboot/domain/userinfo/user_info.java
+ com.cnameproject.springboot.domain.userinfo.user_info
+ com.cnameproject.springboot.domain.userinfo.user_info$user_infoBuilder
 com/cnameproject/springboot/domain/userinfo/UserInfoRepository.java
  com.cnameproject.springboot.domain.userinfo.UserInfoRepository
 com/cnameproject/springboot/web/IndexController.java
  com.cnameproject.springboot.web.IndexController
 com/cnameproject/springboot/web/JsonController.java
  com.cnameproject.springboot.web.JsonController
+com/cnameproject/springboot/web/dto/UserAddInfoDto.java
+ com.cnameproject.springboot.web.dto.UserAddInfoDto
+ com.cnameproject.springboot.web.dto.UserAddInfoDto$UserAddInfoDtoBuilder
+com/cnameproject/springboot/web/dto/UserListDto.java
+ com.cnameproject.springboot.web.dto.UserListDto
+ com.cnameproject.springboot.web.dto.UserListDto$UserListDtoBuilder
 com/cnameproject/springboot/web/PostsApiController.java
  com.cnameproject.springboot.web.PostsApiController
 com/cnameproject/springboot/service/posts/PostsService.java

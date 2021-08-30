@@ -2,7 +2,7 @@ package com.cnameproject.springboot.service.posts;
 
 import com.cnameproject.springboot.domain.posts.Posts;
 import com.cnameproject.springboot.domain.posts.PostsRepository;
-import com.cnameproject.springboot.domain.userinfo.User_info;
+import com.cnameproject.springboot.domain.userinfo.user_info;
 import com.cnameproject.springboot.domain.userinfo.UserInfoRepository;
 import com.cnameproject.springboot.web.dto.*;
 import lombok.RequiredArgsConstructor;
@@ -77,7 +77,7 @@ public class PostsService {
 
     @Transactional
     public String userAddUpdate(Long id, UserAddInfoDto userAddInfoDto){
-        User_info userInfo = userInfoRepository.findInfoByID(id);
+        user_info userInfo = userInfoRepository.findInfoByID(id);
 
         userInfo.addUpdate(userAddInfoDto.getName(),userAddInfoDto.getPhone_num(),userAddInfoDto.getBluetooth_data(),userAddInfoDto.getBirth_data());
         return Long.toString(id);
