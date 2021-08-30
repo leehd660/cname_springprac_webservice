@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class UserInfo {
+public class User_info {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -35,8 +35,8 @@ public class UserInfo {
     private double longitude; //경도데이터
 
     @Builder
-    public UserInfo(String name, String email, String phone_num, String bluetooth_data,String birth_data,
-                    String getTime, double latitude, double longitude) {
+    public User_info(String name, String email, String phone_num, String bluetooth_data, String birth_data,
+                     String getTime, double latitude, double longitude) {
         this.name = name;
         this.email = email;
         this.phone_num = phone_num;

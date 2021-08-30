@@ -1,6 +1,6 @@
 package com.cnameproject.springboot.web.dto;
 
-import com.cnameproject.springboot.domain.userinfo.UserInfo;
+import com.cnameproject.springboot.domain.userinfo.User_info;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,14 +13,14 @@ public class UserListDto {
 //    private Role role;
 
     @Builder
-    public UserListDto(UserInfo entity){
+    public UserListDto(User_info entity){
         this.name= entity.getName();
         this.email = entity.getEmail();
 //        this.role = entity.getRole();
     }
 
-    public UserInfo toEntity(){
-        return UserInfo.builder().name(name).email(email).build();
+    public User_info toEntity(){
+        return User_info.builder().name(name).email(email).build();
     }
 
 }

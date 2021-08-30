@@ -2,7 +2,7 @@ package com.cnameproject.springboot.service.posts;
 
 import com.cnameproject.springboot.domain.posts.Posts;
 import com.cnameproject.springboot.domain.posts.PostsRepository;
-import com.cnameproject.springboot.domain.userinfo.UserInfo;
+import com.cnameproject.springboot.domain.userinfo.User_info;
 import com.cnameproject.springboot.domain.userinfo.UserInfoRepository;
 import com.cnameproject.springboot.web.dto.*;
 import lombok.RequiredArgsConstructor;
@@ -66,18 +66,18 @@ public class PostsService {
 
     @Transactional
     public String userSave(UserListDto userListDto) {
-//        String findEmail = userListDto.getEmail();
-//        Long findId = userInfoRepository.findIdByEmail(findEmail);
-//        if (findId == null){
-//            findId = userInfoRepository.save(userListDto.toEntity()).getId();
-//        }
-        Long findId = userInfoRepository.save(userListDto.toEntity()).getId();
+        String findEmail = userListDto.getEmail();
+        Long findId = userInfoRepository.findIdByEmail(findEmail);
+        if (findId == null){
+            findId = userInfoRepository.save(userListDto.toEntity()).getId();
+        }
+//        Long findId = userInfoRepository.save(userListDto.toEntity()).getId();
         return Long.toString(findId);
     }
 
     @Transactional
     public String userAddUpdate(Long id, UserAddInfoDto userAddInfoDto){
-        UserInfo userInfo = userInfoRepository.findById(id)
+        User_info userInfo = userInfoRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 유저가 없습니다. id = " + id));
 
         userInfo.addUpdate(userAddInfoDto.getName(),userAddInfoDto.getPhone_num(),userAddInfoDto.getBluetooth_data(),userAddInfoDto.getBirth_data());

@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class CareerPosts extends BaseTimeEntity {
+public class Career_posts extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -41,7 +41,7 @@ public class CareerPosts extends BaseTimeEntity {
 
 
     @Builder
-    public CareerPosts(String careerCategory, String careerTitle,String careerStartDate,String careerFinDate,String careerContent,String careerPicture, Long careerFriend, Long userId) {
+    public Career_posts(String careerCategory, String careerTitle, String careerStartDate, String careerFinDate, String careerContent, String careerPicture, Long careerFriend, Long userId) {
         this.careerCategory=careerCategory;
         this.careerTitle=careerTitle;
         this.careerStartDate=careerStartDate;

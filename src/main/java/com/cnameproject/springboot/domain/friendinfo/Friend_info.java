@@ -11,7 +11,7 @@ import javax.persistence.Id;
 @Getter
 @NoArgsConstructor
 @Entity
-public class FriendInfo {
+public class Friend_info {
 
     @Id
     private Long userId;
@@ -29,7 +29,7 @@ public class FriendInfo {
     private String picture;
 
     @Builder
-    public FriendInfo(Long userId,Long friendId,String meetTime,double meetLatitude,double meetLongitude,String memo,String picture){
+    public Friend_info(Long userId, Long friendId, String meetTime, double meetLatitude, double meetLongitude, String memo, String picture){
         this.userId = userId;
         this.friendId = friendId;
         this.meetTime = meetTime;
