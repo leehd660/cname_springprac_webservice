@@ -13,4 +13,7 @@ public interface UserInfoRepository extends JpaRepository<User_info, Long> {
 
     @Query(value = "SELECT id FROM UserInfo ui where email = :email", nativeQuery = true)
     Long findIdByEmail(@Param("email") String findEmail);
+
+    @Query(value = "SELECT * FROM User_info ui where ui.id = :id", nativeQuery = true)
+    User_info findInfoByID(@Param("id") Long id);
 }
