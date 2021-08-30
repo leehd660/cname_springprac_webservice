@@ -12,7 +12,7 @@ public interface UserInfoRepository extends JpaRepository<User_info, Long> {
     List<User_info> findAllDesc();
 
     @Query(value = "SELECT id FROM User_info ui where email = :email", nativeQuery = true)
-    Long findIdByEmail(@Param("email") String findEmail);
+    Long findIdByEmail(@Param("email") String email);
 
     @Query(value = "SELECT * FROM User_info ui where ui.id = :id", nativeQuery = true)
     User_info findInfoByID(@Param("id") Long id);
