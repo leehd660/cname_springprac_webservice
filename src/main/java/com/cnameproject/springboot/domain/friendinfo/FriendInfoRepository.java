@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface FriendInfoRepository extends JpaRepository<Friend_info,Long> {
+public interface FriendInfoRepository extends JpaRepository<friend_info,Long> {
     @Query("SELECT p FROM Posts p ORDER BY p.id DESC")
-    List<Friend_info> findAllDesc();
+    List<friend_info> findAllDesc();
 }

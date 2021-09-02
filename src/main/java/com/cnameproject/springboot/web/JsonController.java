@@ -36,8 +36,11 @@ public class JsonController {
 
     @PostMapping("/user/login/google")
     public String saveUser (@RequestBody UserListDto userdto) {
+        String saveResult = postsService.userSave(userdto);
+        String[] result = saveResult.split(" ");
         Map<String, Object> map = new HashMap();
-        map.put("id", postsService.userSave(userdto));
+        map.put("id", result[0]);
+        map.put("result", result[1]);
         String id_list = new Gson().toJson(map);
         return id_list;
     }
