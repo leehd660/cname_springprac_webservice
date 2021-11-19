@@ -16,6 +16,6 @@ public class AddFriendIdDto {
     }
 
     public user_info toEntity(){
-        return user_info.builder().friendId(String.valueOf(id)).build();
+        return user_info.builder().friend_id(String.valueOf(id)).build();
     }
 }

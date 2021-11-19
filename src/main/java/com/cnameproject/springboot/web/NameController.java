@@ -47,7 +47,7 @@ public class NameController {
         long nowTime = 0;
         double betweenTime = 0;
         while (true) {
-            List<FindNearDto> nearFreindList = postsService.findNearId(id, gpsInfoDto.getGetTime(), gpsInfoDto.getLatitude(),gpsInfoDto.getLongitude());
+            List<FindNearDto> nearFreindList = postsService.findNearId(id, gpsInfoDto.getGet_time(), gpsInfoDto.getLatitude(),gpsInfoDto.getLongitude());
             exchangeList = new Gson().toJson(nearFreindList);
             if (((System.currentTimeMillis()-beforeTime)/1000)>=8){
                 break;

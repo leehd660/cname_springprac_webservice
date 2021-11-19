@@ -8,18 +8,18 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class GpsInfoDto {
-    private long getTime;
+    private long get_time;
     private double latitude;
     private double longitude;
 
     @Builder
     public GpsInfoDto(user_info entity) {
-        this.getTime = entity.getGetTime();
+        this.get_time = entity.getGet_time();
         this.latitude = entity.getLatitude();
         this.longitude = entity.getLongitude();
     }
 
     public user_info toEntity(){
-        return user_info.builder().getTime(getTime).latitude(latitude).longitude(longitude).build();
+        return user_info.builder().get_time(get_time).latitude(latitude).longitude(longitude).build();
     }
 }

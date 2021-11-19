@@ -98,12 +98,12 @@ public class PostsService {
 //        for (int i=0; i<3; i++){
 //            realTime += (long) Math.pow(60,2-i) * Long.parseLong(timeArr[i]);
 //        }
-        userInfo.cname_update(gpsInfoDto.getGetTime(), gpsInfoDto.getLatitude(), gpsInfoDto.getLongitude());
+        userInfo.cname_update(gpsInfoDto.getGet_time(), gpsInfoDto.getLatitude(), gpsInfoDto.getLongitude());
         return String.valueOf(id);
     }
 
     @Transactional
-    public List<FindNearDto> findNearId(Long id, Long getTime, double latitude, double longitude) {
+    public List<FindNearDto> findNearId(Long id, Long get_time, double latitude, double longitude) {
         //findNearId를 하면 user info테이블을 쭉 탐색해서 시간, 위도,경도 value가 오차 범위 안에 있는 것을 전부 뽑는다.
         //결과 값은 findNearDto들의 리스트를 반환한다.
 //        List<User_info> userinfoArr = userInfoRepository.findAllDesc();
@@ -111,8 +111,8 @@ public class PostsService {
 //        for (String t : timeArr){
 //
 //        }
-        long upTime = getTime + 8;
-        long downTime = getTime - 8;
+        long upTime = get_time + 8;
+        long downTime = get_time - 8;
         double upLatitude = latitude+0.0002;
         double downLatitude = latitude-0.0002;
         double upLongitude = longitude+0.0002;
