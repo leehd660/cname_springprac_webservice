@@ -18,7 +18,7 @@ public class BelongSaveDto {
 
     @Builder
     public BelongSaveDto(belong_info entity){
-        this.user_id=user_id;
+        this.user_id= entity.getUser_id();
         this.belong_data= entity.getBelong_data();
         this.position_data= entity.getPosition_data();
         this.tel_data= entity.getTel_data();
