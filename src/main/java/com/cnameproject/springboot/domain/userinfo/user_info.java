@@ -26,13 +26,13 @@ public class user_info {
     private String birth_data;
 
     @Column
-    private long get_time; // 명함 교환할 때의 시간
+    private Long get_time; // 명함 교환할 때의 시간
 
     @Column(nullable = true)
-    private double latitude; //위도데이터
+    private Double latitude; //위도데이터
 
     @Column(nullable = true)
-    private double longitude; //경도데이터
+    private Double longitude; //경도데이터
 
     @Column(nullable = true)
     private String friend_id; //친구들 ID
