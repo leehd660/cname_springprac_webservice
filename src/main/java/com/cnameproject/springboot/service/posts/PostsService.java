@@ -1,9 +1,11 @@
 package com.cnameproject.springboot.service.posts;
 
+import com.cnameproject.springboot.domain.belonginfo.BelongInfoRepository;
+import com.cnameproject.springboot.domain.friendinfo.FriendInfoRepository;
 import com.cnameproject.springboot.domain.posts.Posts;
 import com.cnameproject.springboot.domain.posts.PostsRepository;
-import com.cnameproject.springboot.domain.userinfo.user_info;
 import com.cnameproject.springboot.domain.userinfo.UserInfoRepository;
+import com.cnameproject.springboot.domain.userinfo.user_info;
 import com.cnameproject.springboot.web.dto.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,6 +22,8 @@ import java.util.stream.Collectors;
 public class PostsService {
     private final PostsRepository postsRepository;
     private final UserInfoRepository userInfoRepository;
+    private final BelongInfoRepository belongInfoRepository;
+    private final FriendInfoRepository friendInfoRepository;
 
     @Transactional
     public Long save(PostsSaveRequestDto requestDto) {
@@ -83,6 +87,60 @@ public class PostsService {
 
         userInfo.addUpdate(userAddInfoDto.getName(),userAddInfoDto.getPhone_num(),userAddInfoDto.getBluetooth_data(),userAddInfoDto.getBirth_data());
         return Long.toString(id);
+    }
+
+    @Transactional
+    public String gpsAddUpdate(Long id, GpsInfoDto gpsInfoDto){
+        user_info userInfo = userInfoRepository.findInfoByID(id);
+//        long realTime = 0;
+//        String time = gpsInfoDto.getGetTime();
+//        String[] timeArr = time.split(":");
+//        for (int i=0; i<3; i++){
+//            realTime += (long) Math.pow(60,2-i) * Long.parseLong(timeArr[i]);
+//        }
+        userInfo.cname_update(gpsInfoDto.getGetTime(), gpsInfoDto.getLatitude(), gpsInfoDto.getLongitude());
+        return String.valueOf(id);
+    }
+
+    @Transactional
+    public List<FindNearDto> findNearId(Long id, Long getTime, double latitude, double longitude) {
+        //findNearId를 하면 user info테이블을 쭉 탐색해서 시간, 위도,경도 value가 오차 범위 안에 있는 것을 전부 뽑는다.
+        //결과 값은 findNearDto들의 리스트를 반환한다.
+//        List<User_info> userinfoArr = userInfoRepository.findAllDesc();
+//        String[] timeArr = getTime.split(":");
+//        for (String t : timeArr){
+//
+//        }
+        long upTime = getTime + 8;
+        long downTime = getTime - 8;
+        double upLatitude = latitude+0.0002;
+        double downLatitude = latitude-0.0002;
+        double upLongitude = longitude+0.0002;
+        double downLongitude = longitude-0.0002;
+
+//        for (User_info i : userinfoArr){
+//            double testLat = i.getLatitude();
+//            double testlong = i.getLongitude();
+//            ;
+//            if ()
+//        }
+        return userInfoRepository.findNearIdByCname(upTime,downTime,upLatitude, downLatitude, upLongitude, downLongitude, id)
+                .stream().map(FindNearDto::new).collect(Collectors.toList());
+
+    }
+
+    @Transactional
+    public Long belongSave(BelongSaveDto belongSaveDto){
+        Long saveId = belongInfoRepository.save(belongSaveDto.toEntity()).getUser_id();
+        //여기서 saveId는 userId임.
+        return saveId;
+    }
+
+    @Transactional
+    public String addFriend(long id, AddFriendIdDto addFriendIdDto) {
+        user_info userInfo = userInfoRepository.findInfoByID(addFriendIdDto.getId());
+        userInfo.addFriendId(id);
+        return String.valueOf(id);
     }
 
 }

@@ -26,7 +26,7 @@ public class user_info {
     private String birth_data;
 
     @Column
-    private String getTime; // 명함 교환할 때의 시간
+    private long getTime; // 명함 교환할 때의 시간
 
     @Column(nullable = true)
     private double latitude; //위도데이터
@@ -34,9 +34,12 @@ public class user_info {
     @Column(nullable = true)
     private double longitude; //경도데이터
 
+    @Column(nullable = true)
+    private String friendId; //친구들 ID
+
     @Builder
     public user_info(String name, String email, String phone_num, String bluetooth_data, String birth_data,
-                     String getTime, double latitude, double longitude) {
+                     long getTime, double latitude, double longitude, String friendId) {
         this.name = name;
         this.email = email;
         this.phone_num = phone_num;
@@ -45,9 +48,10 @@ public class user_info {
         this.getTime = getTime;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.friendId = friendId;
     }
 
-    public void cname_update(String getTime, double latitude, double longitude){
+    public void cname_update(long getTime, double latitude, double longitude){
         this.getTime = getTime;
         this.latitude = latitude;
         this.longitude = longitude;
@@ -60,4 +64,12 @@ public class user_info {
         this.birth_data = birth_data;
     }
 
+    public void addFriendId(Long friendId) {
+        if (this.friendId == null){
+            this.friendId = String.valueOf(friendId);
+        }
+        else {
+            this.friendId = this.friendId+ "/" + String.valueOf(friendId);
+        }
+    }
 }
