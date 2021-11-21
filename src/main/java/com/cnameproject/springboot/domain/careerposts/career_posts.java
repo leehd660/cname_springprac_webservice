@@ -36,8 +36,8 @@ public class career_posts extends BaseTimeEntity {
     @Column
     private Long career_friend;
 
-    @JoinColumn
-    private Long userId;
+    @Column
+    private Long user_id;
 
 
     @Builder
@@ -49,7 +49,7 @@ public class career_posts extends BaseTimeEntity {
         this.career_content=careerContent;
         this.career_picture=careerPicture;
         this.career_friend=careerFriend;
-        this.userId=userId;
+        this.user_id=userId;
     }
 
     public void update(String careerCategory, String careerTitle,String careerStartDate,String careerFinDate,String careerContent,String careerPicture, Long careerFriend) {
