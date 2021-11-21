@@ -16,25 +16,25 @@ public class career_posts extends BaseTimeEntity {
     private Long id;
 
     @Column (nullable = false)
-    private String careerCategory;
+    private String career_category;
 
     @Column(length = 500, nullable = false)
-    private String careerTitle;
+    private String career_title;
 
     @Column(nullable = false)
-    private String careerStartDate;
+    private String career_start_date;
 
     @Column
-    private String careerFinDate;
+    private String career_fin_date;
 
     @Column(length = 500, columnDefinition = "TEXT")
-    private String careerContent;
+    private String career_content;
 
     @Column
-    private String careerPicture;
+    private String career_picture;
 
     @Column
-    private Long careerFriend;
+    private Long career_friend;
 
     @JoinColumn
     private Long userId;
@@ -42,23 +42,23 @@ public class career_posts extends BaseTimeEntity {
 
     @Builder
     public career_posts(String careerCategory, String careerTitle, String careerStartDate, String careerFinDate, String careerContent, String careerPicture, Long careerFriend, Long userId) {
-        this.careerCategory=careerCategory;
-        this.careerTitle=careerTitle;
-        this.careerStartDate=careerStartDate;
-        this.careerFinDate=careerFinDate;
-        this.careerContent=careerContent;
-        this.careerPicture=careerPicture;
-        this.careerFriend=careerFriend;
+        this.career_category=careerCategory;
+        this.career_title=careerTitle;
+        this.career_start_date=careerStartDate;
+        this.career_fin_date=careerFinDate;
+        this.career_content=careerContent;
+        this.career_picture=careerPicture;
+        this.career_friend=careerFriend;
         this.userId=userId;
     }
 
     public void update(String careerCategory, String careerTitle,String careerStartDate,String careerFinDate,String careerContent,String careerPicture, Long careerFriend) {
-        this.careerCategory=careerCategory;
-        this.careerTitle=careerTitle;
-        this.careerStartDate=careerStartDate;
-        this.careerFinDate=careerFinDate;
-        this.careerContent=careerContent;
-        this.careerPicture=careerPicture;
-        this.careerFriend=careerFriend;
+        this.career_category=careerCategory;
+        this.career_title=careerTitle;
+        this.career_start_date=careerStartDate;
+        this.career_fin_date=careerFinDate;
+        this.career_content=careerContent;
+        this.career_picture=careerPicture;
+        this.career_friend=careerFriend;
     }
 }

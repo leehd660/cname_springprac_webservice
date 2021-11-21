@@ -11,6 +11,9 @@ public class GpsInfoDto {
     private long get_time;
     private double latitude;
     private double longitude;
+//    private String get_time;
+//    private String latitude;
+//    private String longitude;
 
     @Builder
     public GpsInfoDto(user_info entity) {

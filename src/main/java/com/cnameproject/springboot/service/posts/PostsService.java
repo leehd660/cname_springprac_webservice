@@ -180,4 +180,20 @@ public class PostsService {
         return jsonReturnList;
     }
 
+    @Transactional
+    public String viewMyNamecard(Long id){
+        Map<String, List> map = new HashMap<>();
+        List<ViewUserInfoDto> userInfoList = userInfoRepository.findViewInfoByID(id)
+                .stream().map(ViewUserInfoDto::new).collect(Collectors.toList());
+        map.put("user_info", userInfoList);
+        List<ViewBelongInfoDto> belongInfoList = belongInfoRepository.findViewInfoByID(id)
+                .stream().map(ViewBelongInfoDto::new).collect(Collectors.toList());
+        map.put("belong_info",belongInfoList);
+        List<ViewCareerInfoDto> careerInfoList = careerPostsRepository.findViewInfoById(id)
+                .stream().map(ViewCareerInfoDto::new).collect(Collectors.toList());
+        map.put("career_info",careerInfoList);
+
+        String mapToJson = new Gson().toJson(map);
+        return mapToJson;
+    }
 }

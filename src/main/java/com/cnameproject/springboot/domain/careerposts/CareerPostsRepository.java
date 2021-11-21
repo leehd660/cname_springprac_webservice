@@ -14,4 +14,7 @@ public interface CareerPostsRepository extends JpaRepository<career_posts,Long> 
     @Query(value = "SELECT cp.id FROM career_posts cp where cp.user_id =:userId", nativeQuery = true)
     Long findByUserId(@Param("userId") Long userId);
 
+    @Query(value = "SELECT * FROM career_posts cp where cp.user_id =:userId", nativeQuery = true)
+    List<career_posts> findViewInfoById(@Param("userId") Long userId);
+
 }

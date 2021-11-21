@@ -20,4 +20,10 @@ public class ListPageController {
         List<String> answer = postsService.viewFriendList(id);
         return answer;
     }
+
+    @GetMapping("/namecard/my/{id}")
+    public String viewMyCard(@PathVariable Long id){
+        String jsonStr = postsService.viewMyNamecard(id);
+        return jsonStr;
+    }
 }

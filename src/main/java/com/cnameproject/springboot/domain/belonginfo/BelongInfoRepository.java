@@ -16,4 +16,7 @@ public interface BelongInfoRepository extends JpaRepository<belong_info,Long> {
     @Query(value = "SELECT * FROM belong_info bi where bi.user_id = :userid", nativeQuery = true)
     belong_info findInfoByID(@Param("userid") Long userid);
 
+    @Query(value = "SELECT * FROM belong_info bi where bi.user_id = :userid", nativeQuery = true)
+    List<belong_info> findViewInfoByID(@Param("userid") Long userid);
+
 }
