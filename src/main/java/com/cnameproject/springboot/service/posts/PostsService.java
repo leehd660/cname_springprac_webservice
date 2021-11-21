@@ -1,17 +1,23 @@
 package com.cnameproject.springboot.service.posts;
 
 import com.cnameproject.springboot.domain.belonginfo.BelongInfoRepository;
+import com.cnameproject.springboot.domain.belonginfo.belong_info;
+import com.cnameproject.springboot.domain.careerposts.CareerPostsRepository;
 import com.cnameproject.springboot.domain.friendinfo.FriendInfoRepository;
 import com.cnameproject.springboot.domain.posts.Posts;
 import com.cnameproject.springboot.domain.posts.PostsRepository;
 import com.cnameproject.springboot.domain.userinfo.UserInfoRepository;
 import com.cnameproject.springboot.domain.userinfo.user_info;
 import com.cnameproject.springboot.web.dto.*;
+import com.google.gson.Gson;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 // 스프링에서 Bean을 주입받는 방식 : @Autowired , setter, 생성자 > 이중 생성자로 주입받는 것을 가장 권장
@@ -24,6 +30,8 @@ public class PostsService {
     private final UserInfoRepository userInfoRepository;
     private final BelongInfoRepository belongInfoRepository;
     private final FriendInfoRepository friendInfoRepository;
+    private final CareerPostsRepository careerPostsRepository;
+
 
     @Transactional
     public Long save(PostsSaveRequestDto requestDto) {
@@ -141,6 +149,35 @@ public class PostsService {
         user_info userInfo = userInfoRepository.findInfoByID(addFriendIdDto.getId());
         userInfo.addFriendId(id);
         return String.valueOf(id);
+    }
+
+    @Transactional
+    public String careerSave(CareerUploadDto careerUploadDto){
+        Long findId = careerPostsRepository.save(careerUploadDto.toEntity()).getId();
+        return Long.toString(findId);
+    }
+
+    @Transactional
+    public List<String> viewFriendList(long userId) {
+        List<String> jsonReturnList = new ArrayList<>();
+        String friendIdStr = userInfoRepository.findInfoByID(userId).getFriend_id();
+        String[] friendStrArr = friendIdStr.split("/");
+        for (String friendStr : friendStrArr) {
+            long findFriendId = Long.parseLong(friendStr);
+            Map<String,String> map = new HashMap<>();
+            map.put("id",String.valueOf(findFriendId)); //id넣어주기
+            String friendName = userInfoRepository.findInfoByID(findFriendId).getName();
+            map.put("name",friendName); //name넣어주기
+            belong_info belong_info = belongInfoRepository.findInfoByID(findFriendId);
+            String belong_data = belong_info.getBelong_data();
+            String position_data = belong_info.getPosition_data();
+            map.put("belong_data", belong_data);
+            map.put("position_data", position_data);
+
+            String mapToJson = new Gson().toJson(map);
+            jsonReturnList.add(mapToJson);
+        }
+        return jsonReturnList;
     }
 
 }
