@@ -18,13 +18,13 @@ public class CareerUploadDto {
 
     @Builder
     public CareerUploadDto(career_posts entity){
-        this.careerCategory = entity.getCareerCategory();
-        this.careerTitle = entity.getCareerTitle();
-        this.careerStartDate = entity.getCareerStartDate();
-        this.careerFinDate = entity.getCareerFinDate();
-        this.careerContent = entity.getCareerContent();
-        this.careerPicture = entity.getCareerPicture();
-        this.userId = entity.getUserId();
+        this.careerCategory = entity.getCareer_category();
+        this.careerTitle = entity.getCareer_title();
+        this.careerStartDate = entity.getCareer_start_date();
+        this.careerFinDate = entity.getCareer_fin_date();
+        this.careerContent = entity.getCareer_content();
+        this.careerPicture = entity.getCareer_picture();
+        this.userId = entity.getUser_id();
     }
 
     public career_posts toEntity(){
