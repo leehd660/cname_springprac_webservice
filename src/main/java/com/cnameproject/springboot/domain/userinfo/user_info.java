@@ -69,7 +69,20 @@ public class user_info {
             this.friend_id = String.valueOf(friend_id);
         }
         else {
-            this.friend_id = this.friend_id+ "/" + String.valueOf(friend_id);
+            boolean test = false;
+            String[] dupleTest = this.friend_id.split("/");
+            for (String id : dupleTest) {
+                if (id.equals(String.valueOf(friend_id))){
+                    test = true;
+                    break;
+                }
+            }
+            if (test) {
+                this.friend_id = this.friend_id;
+            }
+            else {
+                this.friend_id = this.friend_id + "/" + String.valueOf(friend_id);
+            }
         }
     }
 }
