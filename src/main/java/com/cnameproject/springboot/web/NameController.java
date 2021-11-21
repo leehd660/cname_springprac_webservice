@@ -59,8 +59,10 @@ public class NameController {
     @PutMapping("/add/friend/{id}")
     public String addFriendId(@PathVariable long id, @RequestBody AddFriendIdDto addFriendIdDto) {
         //{id} : friend id, id in dto : my id
-
+        Map<String, String> map = new HashMap<>();
         String saveResult = postsService.addFriend(id, addFriendIdDto);
-        return saveResult;
+        map.put("id", saveResult);
+        String answer = new Gson().toJson(map);
+        return answer;
     }
 }
