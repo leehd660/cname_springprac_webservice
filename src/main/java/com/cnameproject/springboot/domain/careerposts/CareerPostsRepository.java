@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface CareerPostsRepository extends JpaRepository<career_posts,Long> {
 
-    @Query("SELECT p FROM career_posts cp ORDER BY p.id DESC")
+    @Query("SELECT cp FROM career_posts cp ORDER BY cp.id DESC")
     List<career_posts> findAllDesc();
 
     @Query(value = "SELECT cp.id FROM career_posts cp where cp.user_id =:userId", nativeQuery = true)
