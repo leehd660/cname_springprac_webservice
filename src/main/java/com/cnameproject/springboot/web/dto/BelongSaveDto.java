@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class BelongSaveDto {
-    private long user_id;
+    private Long user_id;
     private String belong_data;
     private String position_data;
     private String tel_data;
