@@ -8,29 +8,29 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class CareerUploadDto {
-    private String careerCategory;
-    private String careerTitle;
-    private String careerStartDate;
-    private String careerFinDate;
-    private String careerContent;
-    private String careerPicture;
-    private Long userId;
+    private String career_category;
+    private String career_title;
+    private String career_start_date;
+    private String career_fin_date;
+    private String career_content;
+    private String career_picture;
+    private Long user_id;
 
     @Builder
     public CareerUploadDto(career_posts entity){
-        this.careerCategory = entity.getCareer_category();
-        this.careerTitle = entity.getCareer_title();
-        this.careerStartDate = entity.getCareer_start_date();
-        this.careerFinDate = entity.getCareer_fin_date();
-        this.careerContent = entity.getCareer_content();
-        this.careerPicture = entity.getCareer_picture();
-        this.userId = entity.getUser_id();
+        this.career_category = entity.getCareer_category();
+        this.career_title = entity.getCareer_title();
+        this.career_start_date = entity.getCareer_start_date();
+        this.career_fin_date = entity.getCareer_fin_date();
+        this.career_content = entity.getCareer_content();
+        this.career_picture = entity.getCareer_picture();
+        this.user_id = entity.getUser_id();
     }
 
     public career_posts toEntity(){
-        return career_posts.builder().careerCategory(careerCategory).careerTitle(careerTitle).
-                careerStartDate(careerStartDate).careerFinDate(careerFinDate).careerContent(careerContent).
-                careerPicture(careerPicture).userId(userId).build();
+        return career_posts.builder().careerCategory(career_category).careerTitle(career_title).
+                careerStartDate(career_start_date).careerFinDate(career_fin_date).careerContent(career_content).
+                careerPicture(career_picture).userId(user_id).build();
     }
 
 }

@@ -18,7 +18,7 @@ public class career_posts extends BaseTimeEntity {
     @Column (nullable = false)
     private String career_category;
 
-    @Column(length = 500, nullable = false)
+    @Column(nullable = false)
     private String career_title;
 
     @Column(nullable = false)
@@ -27,7 +27,7 @@ public class career_posts extends BaseTimeEntity {
     @Column
     private String career_fin_date;
 
-    @Column(length = 500, columnDefinition = "TEXT")
+    @Column
     private String career_content;
 
     @Column
@@ -36,7 +36,7 @@ public class career_posts extends BaseTimeEntity {
     @Column
     private Long career_friend;
 
-    @Column
+    @Column(nullable = false)
     private Long user_id;
 
 

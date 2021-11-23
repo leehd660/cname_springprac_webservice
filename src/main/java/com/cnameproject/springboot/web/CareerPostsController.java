@@ -20,7 +20,7 @@ public class CareerPostsController {
     public String careerUpload(@RequestBody CareerUploadDto cudto){
         Map<String, String> map = new HashMap();
         String a = postsService.careerSave(cudto);
-        String b = String.valueOf(cudto.getUserId());
+        String b = String.valueOf(cudto.getUser_id());
         map.put(b, a);
         String career_list = new Gson().toJson(map);
         return career_list;
