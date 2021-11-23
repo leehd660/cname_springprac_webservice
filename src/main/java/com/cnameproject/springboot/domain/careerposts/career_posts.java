@@ -1,6 +1,5 @@
 package com.cnameproject.springboot.domain.careerposts;
 
-import com.cnameproject.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +9,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class career_posts extends BaseTimeEntity {
+public class career_posts{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
